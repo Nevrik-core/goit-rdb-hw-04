@@ -43,3 +43,32 @@ CREATE TABLE borrowed_books (
     FOREIGN KEY (book_id) REFERENCES books(book_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
+
+
+
+-- Заповнюємо таблицю authors
+INSERT INTO authors (author_name) VALUES ('Roger Zelazny'), ('Stephen King');
+
+-- Заповнюємо таблицю genres
+INSERT INTO genres (genre_name) VALUES ('Fantasy'), ('Horror');
+
+-- Заповнюємо таблицю books
+INSERT INTO books (title, publication_year, author_id, genre_id) VALUES 
+('Nine Princes in Amber', 1970, 1, 1),
+('The Guns of Avalon', 1972, 1, 1),
+('Sign of the Unicorn', 1975, 1, 1),
+('11/22/63', 2011, 2, 2),
+('The Shining', 1977, 2, 2);
+
+-- Заповнюємо таблицю users
+INSERT INTO users (username, email) VALUES ('john_doe', 'john@example.com'), ('jane_smith', 'jane@example.com');
+
+-- Заповнюємо таблицю borrowed_books
+INSERT INTO borrowed_books (book_id, user_id, borrow_date, return_date) VALUES 
+(1, 1, '2024-01-01', '2024-01-15'),
+(4, 2, '2024-01-10', NULL);
+
+SELECT * FROM authors;
+SELECT * FROM books;
+SELECT * FROM borrowed_books;
